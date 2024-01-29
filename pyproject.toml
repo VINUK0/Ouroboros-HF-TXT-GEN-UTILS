@@ -5,8 +5,8 @@ requires = [
 ]
 
 [project]
-name = "ouroboros_text_generation"
-version = "0.0.1"
+name = "ouroboros_hf_text_generation"
+version = "1.0.0"
 description = "Simple hugging face text generation utility package with multiple prompt format support and history."
 readme = "README.md"
 authors = [{name= "VINUK"}]
