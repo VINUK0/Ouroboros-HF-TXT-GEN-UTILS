@@ -1,6 +1,6 @@
 <div align="center">
 
-<img alt="ouroboros" src="https://raw.githubusercontent.com/VINUK0/Ouroboros-HF-TXT-GEN-UTILS/main/images/banner1.png" width="800px" style="max-width: 100%;">
+<img alt="ouroboros" src="./images/banner1.png" width="800px" style="max-width: 100%;">
 
 <br/>
 <br/>

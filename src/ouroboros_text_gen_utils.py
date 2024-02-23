@@ -1,5 +1,6 @@
 import transformers
 from transformers import AutoModelForCausalLM, AutoTokenizer, BitsAndBytesConfig, AutoConfig, AutoModel
+from accelerate.utils import set_seed
 from accelerate import Accelerator
 import torch
 import io
@@ -9,12 +10,14 @@ lprint = logical_print().lprint
 accelerator = Accelerator()
 
 class model_loader():
-    def __init__(self, model_name : str = "microsoft/phi-2", hf_auth_token : str | bool = False, local_files_only : bool = False, use_safetensors : bool = None, dtype : str = "BF16", cache_dir : str | None = None, load_in_4bit : bool = False, load_in_8bit = False, flash_attention : str | None = None, better_transformers : bool = False, onnx_model : bool = False, openvino_model : bool = False, onnx_execution_provider : str = "CPUExecutionProvider", print_params : bool = False, debug : bool = False) -> None:
+    def __init__(self, model_name : str = "microsoft/phi-2", hf_auth_token : str | bool = False, local_files_only : bool = False, use_safetensors : bool = None, dtype : str = "BF16", cache_dir : str | None = None, load_in_4bit : bool = False, load_in_8bit = False, flash_attention : str | None = None, better_transformers : bool = False, onnx_model : bool = False, openvino_model : bool = False, onnx_execution_provider : str = "CPUExecutionProvider", print_params : bool = False, debug : bool = False, seed : int = 42) -> None:
         self.dtype_match = {'F16' : torch.float16,
                             'BF16' : torch.bfloat16,
                             'F32' : torch.float32}
         
         self.native_flash_support = ["gpt_bigcode", "gpt_neo", "gpt_neox", "falcon", "llama", "llava", "mistral", "mixtral", "opt", "phi"]
+        
+        set_seed(seed=seed)
         
         self.model_name = model_name
         self.hf_auth_token = hf_auth_token
