@@ -7,7 +7,7 @@
 
 **Unofficial Hugging Face Text Generation Utility Package.**
 
-**[OUROBOROS VERSION 1.0.1]**
+**[OUROBOROS VERSION 0.0.1]**
 
 </div>
 
@@ -15,7 +15,7 @@
 *Simple installation from PyPI*
 
 ```bash
-pip install ouroboros-hf-text-generation
+pip install ouroboros_hf_text_gen_utils
 ```
 
 <details>

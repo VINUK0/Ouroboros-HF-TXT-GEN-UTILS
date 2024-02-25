@@ -120,7 +120,7 @@ class model_loader():
             lprint(level='OK', c_class='Model_Loader', func='hf_onnx_model', line=117, msg=f'Ignoring model dtype as onnx models work using the pre define configs.')
         
         self.model = ORTModelForCausalLM.from_pretrained(model_id=self.model_name, cache_dir=self.cache_dir, provider=self.execution_provider, use_io_binding=None, use_auth_token=self.hf_auth_token, local_files_only=self.local_files_only)
-        self.model.eval()
+        
         if self.debug:
             lprint(level='OK', c_class='Model_Loader', func='hf_onnx_model', line=122, msg=f'Model loaded successfully.')
     
