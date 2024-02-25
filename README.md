@@ -15,7 +15,7 @@
 *Simple installation from PyPI*
 
 ```bash
-pip install ouroboros_hf_text_gen_utils
+pip install ouroboros-hf-text-generation
 ```
 
 <details>
